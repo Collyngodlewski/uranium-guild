@@ -17,6 +17,7 @@ export default function Home() {
           <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
             <div className="flex gap-5 text-3xl items-center font-extralight">
               <Link href={"/"}>Uranium</Link>
+              <Link href={"/apply"}>Apply</Link>
             </div>
             {!hasEnvVars ? <EnvVarWarning /> : <AuthButton />}
           </div>
