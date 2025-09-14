@@ -38,13 +38,12 @@ export function ApplyForm() {
   const [feedback, setFeedback] = useState('');
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setSubmitError(null);
-    setSuccess(false);
     const supabase = createClient();
 
     try {
@@ -65,7 +64,7 @@ export function ApplyForm() {
         ])
         .select();
       if (error) throw error;
-      setSuccess(true);
+      router.push("/apply-success");
     } catch (error: unknown) {
       setSubmitError(error instanceof Error ? error.message : "An error occurred");
     } finally {
@@ -231,7 +230,6 @@ export function ApplyForm() {
                       placeholder="Type your message here."                      
                       value={feedback}
                       onChange={(e) => setFeedback(e.target.value)}
-                      required
                     />
                   </div>
                 </div>
