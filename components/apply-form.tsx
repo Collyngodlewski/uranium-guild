@@ -74,7 +74,7 @@ export function ApplyForm() {
 
   return (
     <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
-      <div className="w-full max-w-sm">
+      <div className="w-full max-w-5xl">
         <div className="flex flex-col gap-6">
           <Card>
             <CardHeader>
@@ -140,8 +140,8 @@ export function ApplyForm() {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectGroup>
-                        <SelectItem value="Death Knight">Death Knight</SelectItem>
-                        <SelectItem value="Demon Hunter">Demon Hunter</SelectItem>
+                        <SelectItem value="Death_Knight">Death Knight</SelectItem>
+                        <SelectItem value="Demon_Hunter">Demon Hunter</SelectItem>
                         <SelectItem value="Druid">Druid</SelectItem>
                         <SelectItem value="Evoker">Evoker</SelectItem>
                         <SelectItem value="Hunter">Hunter</SelectItem>
