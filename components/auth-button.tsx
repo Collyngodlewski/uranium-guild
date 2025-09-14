@@ -11,12 +11,12 @@ export async function AuthButton() {
 
   const user = data?.claims;
 
- 
+  const userId = user?.sub;
 
   let { data: profiles } = await supabase
     .from('profiles')
     .select('id, character_name')
-    .eq('id', user.sub ?? null);
+    .eq('id', userId ?? null);
 
   
 
