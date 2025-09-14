@@ -11,7 +11,11 @@ export async function AuthButton() {
 
   const user = data?.claims;
 
+  
+
   const userId = user?.sub;
+
+  console.log("USER", userId);
 
   let { data: profiles } = await supabase
     .from('profiles')

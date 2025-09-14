@@ -46,16 +46,36 @@ export async function updateSession(request: NextRequest) {
   // with the Supabase client, your users may be randomly logged out.
   const { data } = await supabase.auth.getClaims();
   const user = data?.claims;
+  const userId = user?.sub;
 
+  let { data: profiles } = await supabase
+    .from('profiles')
+    .select('id, character_name, is_admin')
+    .eq('id', userId ?? null);
+
+  const isAdmin = profiles ? profiles[0].is_admin : null;
+  const admin = isAdmin === true;
+  
   if (
-    request.nextUrl.pathname !== "/" &&
+    request.nextUrl.pathname !== "/" &&  
+    request.nextUrl.pathname !== "/apply" &&
     !user &&
     !request.nextUrl.pathname.startsWith("/login") &&
     !request.nextUrl.pathname.startsWith("/auth")
+    
   ) {
     // no user, potentially respond by redirecting the user to the login page
+    
     const url = request.nextUrl.clone();
     url.pathname = "/auth/login";
+    return NextResponse.redirect(url);
+  }
+
+  if (
+    user && !admin && request.nextUrl.pathname.startsWith("/admin")
+  ) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/";
     return NextResponse.redirect(url);
   }
 
