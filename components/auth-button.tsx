@@ -18,12 +18,13 @@ export async function AuthButton() {
     .select('id, character_name, is_admin')
     .eq('id', userId ?? null);
 
-  const isAdmin = profiles[0]?.is_admin;
+
+  const isAdmin = profiles ? profiles[0].is_admin : null;
   const admin = isAdmin === true;
 
   return user ? (
     <div className="flex items-center gap-4">
-      {/* Hey, {profiles[0].character_name ? profiles[0].character_name : 'Saladbar'}! */}
+      Hey, {profiles[0].character_name ? profiles[0].character_name : 'Saladbar'}!
       <Button asChild size="sm" variant={"outline"}>
         <Link href="/protected">Account</Link>
       </Button>
