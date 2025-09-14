@@ -58,6 +58,70 @@
   }
 }
 
+.uranium-banner{
+  /* background-image: linear-gradient(
+    0deg,
+    hsl(154deg 100% 5%) 0%,
+    hsl(153deg 100% 6%) 6%,
+    hsl(151deg 100% 8%) 13%,
+    hsl(149deg 96% 9%) 21%,
+    hsl(148deg 96% 10%) 29%,
+    hsl(146deg 96% 11%) 38%,
+    hsl(144deg 94% 12%) 48%,
+    hsl(143deg 94% 13%) 56%,
+    hsl(141deg 92% 14%) 64%,
+    hsl(139deg 92% 15%) 70%,
+    hsl(137deg 90% 16%) 75%,
+    hsl(136deg 91% 17%) 79%,
+    hsl(134deg 89% 19%) 82%,
+    hsl(133deg 88% 20%) 85%,
+    hsl(131deg 87% 21%) 87%,
+    hsl(130deg 87% 22%) 89%,
+    hsl(128deg 86% 23%) 91%,
+    hsl(126deg 85% 24%) 93%,
+    hsl(124deg 84% 25%) 94%,
+    hsl(123deg 83% 26%) 95%,
+    hsl(122deg 83% 27%) 96%,
+    hsl(119deg 82% 28%) 98%,
+    hsl(119deg 80% 29%) 98%,
+    hsl(117deg 79% 31%) 99%,
+    hsl(115deg 79% 32%) 100%
+  ); */
+
+  background-image: linear-gradient(
+    350deg,
+    hsl(154deg 100% 5%) 1%,
+    hsl(153deg 100% 6%) 24%,
+    hsl(151deg 100% 8%) 31%,
+    hsl(149deg 96% 9%) 37%,
+    hsl(148deg 96% 10%) 42%,
+    hsl(146deg 96% 11%) 46%,
+    hsl(144deg 94% 12%) 50%,
+    hsl(143deg 94% 13%) 53%,
+    hsl(141deg 92% 14%) 56%,
+    hsl(139deg 92% 15%) 59%,
+    hsl(137deg 90% 16%) 63%,
+    hsl(136deg 91% 17%) 65%,
+    hsl(134deg 89% 19%) 68%,
+    hsl(133deg 88% 20%) 71%,
+    hsl(131deg 87% 21%) 74%,
+    hsl(130deg 87% 22%) 77%,
+    hsl(128deg 86% 23%) 79%,
+    hsl(126deg 85% 24%) 82%,
+    hsl(124deg 84% 25%) 85%,
+    hsl(123deg 83% 26%) 87%,
+    hsl(122deg 83% 27%) 90%,
+    hsl(119deg 82% 28%) 92%,
+    hsl(119deg 80% 29%) 95%,
+    hsl(117deg 79% 31%) 97%,
+    hsl(115deg 79% 32%) 100%
+
+    
+  );
+
+  /* filter: blur(4px); */
+}
+
 @layer base {
   * {
     @apply border-border;
