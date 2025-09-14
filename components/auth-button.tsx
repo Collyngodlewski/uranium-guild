@@ -15,10 +15,11 @@ export async function AuthButton() {
 
   let { data: profiles } = await supabase
     .from('profiles')
-    .select('id, character_name')
+    .select('id, character_name, is_admin')
     .eq('id', userId ?? null);
 
-  
+  const isAdmin = profiles[0]?.is_admin;
+  const admin = isAdmin === true;
 
   return user ? (
     <div className="flex items-center gap-4">
@@ -26,9 +27,12 @@ export async function AuthButton() {
       <Button asChild size="sm" variant={"outline"}>
         <Link href="/protected">Account</Link>
       </Button>
-      <Button asChild size="sm" variant={"outline"}>
-        <Link href="/admin">Admin</Link>
-      </Button>
+      { 
+        admin && 
+        <Button asChild size="sm" variant={"outline"}>
+          <Link href="/admin">Admin</Link>
+        </Button>
+      }
       <LogoutButton />
     </div>
   ) : (
