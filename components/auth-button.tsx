@@ -22,7 +22,7 @@ export async function AuthButton() {
 
   return user ? (
     <div className="flex items-center gap-4">
-      Hey, {profiles[0].character_name ? profiles[0].character_name : 'Saladbar'}!
+      {/* Hey, {profiles[0].character_name ? profiles[0].character_name : 'Saladbar'}! */}
       <Button asChild size="sm" variant={"outline"}>
         <Link href="/protected">Account</Link>
       </Button>
