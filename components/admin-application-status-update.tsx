@@ -6,8 +6,8 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { toast } from "sonner"
+} from "@/components/ui/select";
+import { toast } from "@/components/ui/sonner";
 import { useState, useEffect, useRef } from "react";
 import { createClient } from "@/lib/supabase/client";
 export function StatusUpdate({...props}: {status: any, id: string}) {
