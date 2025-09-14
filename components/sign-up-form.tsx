@@ -40,6 +40,8 @@ export function SignUpForm({
       return;
     }
 
+  
+
     try {
       const { error } = await supabase.auth.signUp({
         email,
@@ -49,7 +51,20 @@ export function SignUpForm({
         },
       });
       if (error) throw error;
-      router.push("/auth/sign-up-success");
+
+      const { data } = await supabase.auth.getClaims();
+
+      const user = data?.claims;
+
+      const userId = user?.sub;
+
+    const { data: update } = await supabase
+      .from('profiles')
+      .update({ character_name: characterName })
+      .eq('id', userId)
+      .select()
+
+      router.push("/");
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "An error occurred");
     } finally {
