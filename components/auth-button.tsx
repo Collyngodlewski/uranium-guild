@@ -15,8 +15,6 @@ export async function AuthButton() {
 
   const userId = user?.sub;
 
-  console.log("USER", userId);
-
   let { data: profiles } = await supabase
     .from('profiles')
     .select('id, character_name, is_admin')
