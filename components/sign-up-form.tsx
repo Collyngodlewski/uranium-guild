@@ -22,6 +22,7 @@ export function SignUpForm({
 }: React.ComponentPropsWithoutRef<"div">) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [characterName, setCharacterName] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -75,6 +76,17 @@ export function SignUpForm({
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="character_name">Character Name</Label>
+                <Input
+                  id="character_name"
+                  type="text"
+                  placeholder="Nexus King Saladbar"
+                  required
+                  value={characterName}
+                  onChange={(e) => setCharacterName(e.target.value)}
                 />
               </div>
               <div className="grid gap-2">
