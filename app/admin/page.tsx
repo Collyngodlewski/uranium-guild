@@ -25,7 +25,7 @@ export default async function ProtectedPage() {
       <div className="w-full">
         <div className="bg-accent text-sm p-3 px-5 rounded-md text-foreground flex gap-3 items-center">
           <InfoIcon size="16" strokeWidth={2} />
-          This is a protected page that you can only see as an authenticated
+          This is a protected Admin page that you can only see as an authenticated
           user
         </div>
       </div>
@@ -38,7 +38,7 @@ export default async function ProtectedPage() {
       </div> */}
       <div>
         {/* <h2 className="font-bold text-2xl mb-4">Update Profile</h2> */}
-        <UpdateAccountForm profiles={profiles} />
+        {/* <UpdateAccountForm profiles={profiles} /> */}
       </div>
     </div>
   );
