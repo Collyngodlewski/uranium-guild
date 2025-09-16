@@ -3,7 +3,7 @@ import uraniumBanner from '../app/Toxic_Power__Uranium_Hazard_Logo.png'
 
 export function Hero() {
   return (
-    <div className="flex flex-col gap-16 items-center w-full  ">
+    <div className="flex flex-col  items-center w-full  mb-8 ">
         <div className="uranium-banner w-full flex justify-center">
             <Image
               src={uraniumBanner}
@@ -13,7 +13,7 @@ export function Hero() {
               className=""
             />
        </div>
-      <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-foreground/10 to-transparent my-8" />
+      {/* <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-foreground/10 to-transparent my-8" /> */}
     </div>
   );
 }
