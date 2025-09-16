@@ -6,7 +6,7 @@ import queen from '../app/queen-ansurek.png'
 export function HomepageBackgroundImage() {
   return (
     <>
-    <div className="absolute bottom-0 left-0 opacity-10 z-[-1]">
+    <div className="fixed bottom-0 left-0 opacity-10 z-[-1]">
         <div className="">
             <Image
               src={dimmy}
@@ -17,7 +17,7 @@ export function HomepageBackgroundImage() {
             />
        </div>
     </div>
-    <div className="hidden 4xl:block absolute bottom-0 left-[40%]  opacity-10 z-[-1]">
+    <div className="hidden 4xl:block fixed bottom-0 left-[40%]  opacity-10 z-[-1]">
         <div className="">
             <Image
               src={gally}
@@ -28,7 +28,7 @@ export function HomepageBackgroundImage() {
             />
        </div>
     </div>
-    <div className="hidden 3xl:block absolute bottom-0 right-0  opacity-10 z-[-1]">
+    <div className="hidden 3xl:block fixed bottom-0 right-0  opacity-10 z-[-1]">
         <div className="">
             <Image
               src={queen}

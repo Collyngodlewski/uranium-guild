@@ -2,10 +2,18 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import { createClient } from "@/lib/supabase/server";
 import { LogoutButton } from "./logout-button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 export async function AuthButton() {
   const supabase = await createClient();
-
   // You can also use getUser() which will be slower.
   const { data } = await supabase.auth.getClaims();
 
@@ -32,9 +40,35 @@ export async function AuthButton() {
       </Button>
       { 
         admin && 
-        <Button asChild size="sm" variant={"outline"}>
+        <div>
+        {/* <Button asChild size="sm" variant={"outline"}>
           <Link href="/admin">Admin</Link>
-        </Button>
+        </Button> */}
+        
+           <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button size="sm" variant="outline">Admin</Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="w-56">
+        <DropdownMenuLabel>Admin Panel</DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        <DropdownMenuRadioGroup >
+          <DropdownMenuRadioItem value="dashboard">
+            <Link href="/admin">Dashboard</Link>
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="applications">
+            <Link href="/admin/applications">Applications</Link>
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="droptemizer">
+            <Link href="/admin/droptemizer">Droptimizer</Link>
+          </DropdownMenuRadioItem>
+           <DropdownMenuRadioItem value="homepage_content">
+            <Link href="/admin/homepage_content">Homepage Content</Link>
+          </DropdownMenuRadioItem>
+        </DropdownMenuRadioGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
+        </div>
       }
       <LogoutButton />
     </div>

@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/select"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Textarea } from "./ui/textarea"
 
 export function ApplicationDialog({...props}: {app: any}) {
     const formatDate = new Date(props.app.created_at).toLocaleDateString('en-US', {
@@ -52,7 +53,7 @@ export function ApplicationDialog({...props}: {app: any}) {
             <Label htmlFor="link" className="w-1/4 whitespace-nowrap mr-4" >
               Logs:
             </Label>
-            <Input
+            <Textarea
               className="w-full"
               id="link"
               defaultValue={props.app.logs}
@@ -65,7 +66,7 @@ export function ApplicationDialog({...props}: {app: any}) {
             <Label htmlFor="link" className="w-1/4 whitespace-nowrap mr-4" >
               Raider.io:
             </Label>
-            <Input
+            <Textarea
               className="w-full"
               id="link"
               defaultValue={props.app.raider}
@@ -78,7 +79,7 @@ export function ApplicationDialog({...props}: {app: any}) {
             <Label htmlFor="link" className="w-1/4 whitespace-nowrap mr-4" >
               Experience:
             </Label>
-            <Input
+            <Textarea
               className="w-full"
               id="experience"
               defaultValue={props.app.experience}
@@ -91,7 +92,7 @@ export function ApplicationDialog({...props}: {app: any}) {
             <Label htmlFor="link" className=" w-1/4 whitespace-nowrap mr-4" >
               Reason:
             </Label>
-            <Input
+            <Textarea
               className="w-full"
               id="reason"
               defaultValue={props.app.reason}
@@ -104,7 +105,7 @@ export function ApplicationDialog({...props}: {app: any}) {
             <Label htmlFor="link" className="w-1/4 whitespace-nowrap mr-4" >
               Feedback:
             </Label>
-            <Input
+            <Textarea
               className="w-full"
               id="feedback"
               defaultValue={props.app.feedback}
@@ -123,6 +124,7 @@ export function ApplicationDialog({...props}: {app: any}) {
               id="status"
               defaultValue={props.app.status}
               readOnly
+              disabled
             />
              {/* <Select>
                 <SelectTrigger className="w-full">
