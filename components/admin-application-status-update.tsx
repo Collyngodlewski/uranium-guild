@@ -34,6 +34,15 @@ export function StatusUpdate({...props}: {status: any, id: string}) {
 };
 
 
+function formatStatus(status: string) {
+  if (!status) return "";
+  return status
+    .split("_")
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+
 
 return(
 <Select onValueChange={async (value) => {
@@ -41,7 +50,7 @@ return(
         await updateStatus(value);
       }}>
     <SelectTrigger className="w-[180px]">
-      <SelectValue placeholder={status} />
+      <SelectValue placeholder={formatStatus(status)} />
     </SelectTrigger>
     <SelectContent>
       <SelectItem className="capitalize" value="new">New</SelectItem>

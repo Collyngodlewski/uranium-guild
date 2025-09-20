@@ -27,6 +27,14 @@ export function ApplicationDialog({...props}: {app: any}) {
         day: 'numeric',
       });
 
+  function formatStatus(status: string) {
+  if (!status) return "";
+  return status
+    .split("_")
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -122,7 +130,7 @@ export function ApplicationDialog({...props}: {app: any}) {
             <Input
               className="w-full"
               id="status"
-              defaultValue={props.app.status}
+              defaultValue={formatStatus(props.app.status)}
               readOnly
               disabled
             />
