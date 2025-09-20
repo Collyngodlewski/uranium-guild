@@ -59,8 +59,11 @@ export async function AuthButton() {
           <DropdownMenuRadioItem value="applications">
             <Link href="/admin/applications">Applications</Link>
           </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="droptemizer">
+          <DropdownMenuRadioItem value="droptimizer">
             <Link href="/admin/droptemizer">Droptimizer</Link>
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="wow_audit">
+            <Link href="/admin/wow_audit">Wow Audit</Link>
           </DropdownMenuRadioItem>
            <DropdownMenuRadioItem value="homepage_content">
             <Link href="/admin/homepage_content">Homepage Content</Link>
